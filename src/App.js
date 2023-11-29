@@ -13,8 +13,6 @@ import Mypage from "./component/Mypage/Mypage"
 import ChangePassword from "./component/Mypage/ChangePassword";
 
 function App() {
-  // const [ session, setSession ] = useState('suah');
-  
   return (
     <>
       <Routes>
@@ -35,5 +33,4 @@ function App() {
     </>
   );
 }
-
 export default App;
