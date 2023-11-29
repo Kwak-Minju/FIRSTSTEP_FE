@@ -13,5 +13,4 @@ const BoardPagination = ({total, limit, page, setPage}) => {
         </>
     );
 }
-
 export default BoardPagination;

@@ -36,11 +36,9 @@ const BoardWrite = () => {
                 console.log(response);
                 goBoardPostList();
             }).catch(err => console.log(err));
-        }
-        
+        }        
     }
-
-
+    
     return (
         <>
             <div className="board_write_wrap">
@@ -74,5 +72,4 @@ const BoardWrite = () => {
         </>
     );
 }
-
 export default BoardWrite;

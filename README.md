@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+<h1 align="center">Welcome to FIRST STEP <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="48px"></h1>
+<p>
+</p>
+<center>
+    <img src="./readMesrc/logo.png" alt="Firststep" style="zoom:76%;" align="center"/>
+</center>
+<br>
+> First Step / 한걸음 대여소 (신세계 I&C 2nd 모듈 프로젝트)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### 🏠 [GitHub_Backend](https://github.com/Kwak-Minju/FIRSTSTEP_BE) 🏠 [GitHub_Front](https://github.com/Kwak-Minju/FIRSTSTEP_FE)
 
-## Available Scripts
 
-In the project directory, you can run:
+## ✨ Description
+```sh
+필요한 물폼 혹은 필요 없는 물품을 서로 공유하며 더 좋은 세상으로 한 걸음 나아가는 커뮤니티
+```
+## 🤼‍♂️Author
+```sh
+🐯 곽민주 : 마이페이지, 게시물 조회/수정/삭제, 게시물 대여/반납
+🐉 조수아 : 데이터베이스, 게시판, 게시물 대여/반납, 로그인/로그아웃, 회원탈퇴, 비밀번호 변경
+🐺 김기성 : 로그인
+🐶 김서연 : 팀장, 회원가입
+🐱 신명호 : 홈
+```
 
-### `npm start`
+## 🔍 기능
+```sh
+- 게시판 등록/수정/보기/삭제
+- 로그인/로그아웃
+- 회원가입/회원탈퇴
+- 마이페이지(대여물품 조회, 비밀번호 변경)
+- 게시물 대여/반납
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔧 기술 스택
+### Front-end
+![Static Badge](https://img.shields.io/badge/React-%2361DAFB?logo=react&logoColor=white)
+![Static Badge](https://img.shields.io/badge/HTML5-%23E34F26?logo=html5&logoColor=white)
+![Static Badge](https://img.shields.io/badge/CSS3-%231572B6?logo=css3&logoColor=white)
+### Backend
+![Static Badge](https://img.shields.io/badge/Python3-3776AB?logo=Python&logoColor=%23FFFFFF) ![Static Badge](https://img.shields.io/badge/Flask-000000?logo=Flask&logoColor=%23FFFFFF)
+### Database
+![Static Badge](https://img.shields.io/badge/MySQL-%234479A1?logo=mysql&logoColor=white)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏛️Architecture
+<center>
+    <img src="./readMesrc/architecture.png" alt="FIRSTSTEP"/>    
+</center>
 
-### `npm test`
+## 🗃️DB
+<center>
+    <img src="./readMesrc/db.png" alt="FIRSTSTEP"/>    
+</center>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🏃 Steps to run
 
-### `npm run build`
+### 🗄️Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+$ cd FIRSTSTEP_BE
+$ python install -r requirements.txt
+$ python server.py
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 💻Frontend 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+$ cd FIRSTSTEP_FE
+$ npm install
+$ npm run
+```
+## 📌주요 코드
 
-### `npm run eject`
+```python
+# Flask / MySQL 연동
+def getCon():
+  return pymysql.connect(host="localhost",
+                     user="root", password="1234",
+                     db="firststep",
+                     charset="utf8",
+                     cursorclass=pymysql.cursors.DictCursor)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# axios를 통한 서버와의 비동기 통신
+axios.put(`http://127.0.0.1:5000/boardEdit/${boardId}`, {title : title, content : content}, { headers: { 'Content-Type': 'application/json' } })
+        .then(res => {
+            setEdit(!edit);
+            setBoardData(res.data)
+        }).catch(err => console.log(err));
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔍 Overview
+### 1. main 페이지
+<center>
+    <img src="./readMesrc/mainPage.png" alt="FIRSTSTEP"/>    
+</center>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. 공지사항 페이지
+<center>
+    <img src="./readMesrc/noticePage.png" alt="FIRSTSTEP"/>    
+</center>
 
-## Learn More
+### 3. 로그인 페이지
+<center>
+    <img src="./readMesrc/loginPage.png" alt="FIRSTSTEP"/>    
+</center>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. 회원가입 페이지
+<center>
+    <img src="./readMesrc/signupPage.png" alt="FIRSTSTEP"/>    
+</center>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 5. 마이페이지
+<center>
+    <img src="./readMesrc/myPage.png" alt="FIRSTSTEP"/>    
+</center>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 6. 상세 페이지
+<center>
+    <img src="./readMesrc/detailPage.png" alt="FIRSTSTEP"/>    
+</center>
+<center>
+    <img src="./readMesrc/detail2Page.png" alt="FIRSTSTEP"/>    
+</center>
+<br>

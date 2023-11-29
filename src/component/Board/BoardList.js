@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom';
 import './BoardPostList.css';
 
-
 const BoardList = ({item, startat, limit}) => {
-
-    
-
     return (
         <>
-
         <div className="board_list_wrap">
                 <div className="board_list">
                     <div className="top">
@@ -30,10 +25,8 @@ const BoardList = ({item, startat, limit}) => {
                     ))
                     }
                 </div>
-            </div>
-        
+            </div>        
         </>
     );
 }
-
 export default BoardList;
